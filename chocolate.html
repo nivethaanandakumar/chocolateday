@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Day🍫</title>
+    <link rel="stylesheet" href="chocolate.css">
+</head>
+<body>
+    <h1>HAPPY CHOCOLATE DAY DEAR❤️🍫</h1> <br>
+    <div class="background"></div>
+    <div class="continer">
+        <h2>HOW MUCH DO YOU LOVE ME?</h2> <br>
+        <p>You will get a prize based on your answer👅😜</p> <br>
+    </div>
+    <input type="number" placeholder="Out of 50" class="box" id="loveAmount"> <br>
+    <button class="button" onclick="submitAnswer()">Submit</button> <br>
+
+    <!-- Placeholder for displaying the message -->
+    <div id="resultMessage"></div> 
+
+    <script>
+        function submitAnswer() {
+            // Get the value from the input field
+            let loveValue = document.getElementById('loveAmount').value;
+            let message = "";
+            let messageClass = "";
+
+            // Check the range using if-else
+            if (loveValue >= 45 && loveValue <= 50) {
+                message = "WOW! You love me a lot! Here is your chocolates 🍫🍫🍫🍫🍫";
+                messageClass = "high-love";
+            } else if (loveValue >= 30 && loveValue < 45) {
+                message = "You love me but not enough. Here is your chocolates 🍫🍫🍫🍫";
+                messageClass = "medium-love";
+            } else if (loveValue >= 15 && loveValue < 30) {
+                message = "OHHHHH Koragu unaku chocolate venuma peh 🐒 here is your chocolate 🍫";
+                messageClass = "low-love";
+            } else if (loveValue >= 1 && loveValue < 15) {
+                message = "Ni va da setha una ena panra nu matum paru kaima panran una☠️💀";
+                messageClass = "low-love";
+            } else {
+                message = "Po oluga number kudu 50 kulla";
+                messageClass = "invalid-input";
+            }
+
+            // Display the message below the button with the appropriate style
+            let resultMessageDiv = document.getElementById('resultMessage');
+            resultMessageDiv.innerHTML = message;
+            resultMessageDiv.className = messageClass; // Add the corresponding CSS class
+        }
+    </script>
+</body>
+</html>
